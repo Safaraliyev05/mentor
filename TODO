@@ -1,2 +1,57 @@
 sudo apt-get install python3-tk
 python3 -m tkinter
+
+Setup Commands
+    import turtle: Import the Turtle module.
+    turtle.Screen(): Create a screen object to manage the canvas.
+    turtle.Turtle(): Create a turtle object (pen) for drawing.
+
+Movement Commands
+    forward(distance): Move the turtle forward by the specified distance.
+    backward(distance): Move the turtle backward by the specified distance.
+    left(angle): Turn the turtle left by a specified angle.
+    right(angle): Turn the turtle right by a specified angle.
+    goto(x, y): Move the turtle to a specific position (x, y).
+    setheading(angle): Set the turtle’s orientation to a specific angle.
+
+Drawing Commands
+    pendown(): Lower the pen to start drawing.
+    penup(): Lift the pen to stop drawing.
+    pensize(width): Set the width of the pen.
+    pencolor(color): Set the pen's color (e.g., "red", "blue", or RGB values).
+    fillcolor(color): Set the fill color for shapes.
+    begin_fill(): Start filling the shape with the fill color.
+    end_fill(): Complete the filling of the shape.
+
+Shape Commands
+    circle(radius): Draw a circle with a specified radius.
+    dot(size, color): Draw a filled dot with the specified size and color.
+    stamp(): Leave a copy of the turtle’s shape at the current position.
+
+Turtle Appearance
+    shape("shape"): Change the turtle’s shape (e.g., "arrow", "turtle", "circle", "square", "triangle", or "classic").
+    speed(speed): Set the turtle’s speed (values: "fastest", "fast", "normal", "slow", "slowest", or 0-10).
+    hideturtle(): Hide the turtle (pen).
+    showturtle(): Show the turtle (pen).
+
+Screen Commands
+    title("title"): Set the title of the window.
+    bgcolor(color): Change the background color of the screen.
+    screensize(width, height): Set the screen size.
+    clear(): Clear the drawing without resetting the turtle’s position.
+    reset(): Reset the screen and turtle to the starting state.
+    bye(): Close the turtle graphics window.
+
+Control Commands
+    undo(): Undo the last turtle action.
+    setx(x): Set the turtle’s x-coordinate.
+    sety(y): Set the turtle’s y-coordinate.
+    xcor(): Get the turtle’s current x-coordinate.
+    ycor(): Get the turtle’s current y-coordinate.
+    heading(): Get the turtle’s current heading.
+    distance(x, y): Get the distance between the turtle and a specific position.
+
+Event Handling
+    onclick(function): Bind a function to mouse clicks on the screen.
+    onkey(function, key): Bind a function to a keypress event.
+    listen(): Listen for keyboard or mouse events.

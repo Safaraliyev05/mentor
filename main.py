@@ -1,84 +1,30 @@
-import turtle
+import tkinter as tk
+from tkinter import messagebox
 
-def draw_rectangle(color, x, y, width, height):
-    """Draw a filled rectangle."""
-    turtle.penup()
-    turtle.goto(x, y)
-    turtle.pendown()
-    turtle.fillcolor(color)
-    turtle.begin_fill()
-    for _ in range(2):
-        turtle.forward(width)
-        turtle.left(90)
-        turtle.forward(height)
-        turtle.left(90)
-    turtle.end_fill()
+# Function to display a message when the button is clicked
+def on_button_click():
+    user_input = entry.get()
+    if user_input:
+        messagebox.showinfo("Greeting", f"Hello, {user_input}!")
+    else:
+        messagebox.showwarning("Input Error", "Please enter your name.")
 
-def draw_circle(color, x, y, radius):
-    """Draw a filled circle."""
-    turtle.penup()
-    turtle.goto(x, y - radius)  # Adjust position to draw circle from center
-    turtle.pendown()
-    turtle.fillcolor(color)
-    turtle.begin_fill()
-    turtle.circle(radius)
-    turtle.end_fill()
+# Create the main window
+root = tk.Tk()
+root.title("Simple Tkinter App")
+root.geometry("300x200")
 
-def draw_trapezoid(color, x, y, top_width, bottom_width, height):
-    """Draw a filled trapezoid."""
-    turtle.penup()
-    turtle.goto(x, y)
-    turtle.pendown()
-    turtle.fillcolor(color)
-    turtle.begin_fill()
-    turtle.forward(bottom_width)
-    turtle.left(120)
-    turtle.forward(height)
-    turtle.left(60)
-    turtle.forward(top_width)
-    turtle.left(60)
-    turtle.forward(height)
-    turtle.left(120)
-    turtle.end_fill()
+# Create a label
+label = tk.Label(root, text="Enter your name:")
+label.pack(pady=10)
 
-def draw_ferrari():
-    """Draw a side view of a Ferrari-like car."""
-    turtle.speed(3)
+# Create an entry widget
+entry = tk.Entry(root, width=25)
+entry.pack(pady=5)
 
-    # Draw the car body
-    draw_rectangle("red", -150, 0, 300, 50)  # Main body
-    draw_rectangle("red", -100, 50, 200, 40)  # Top cabin
+# Create a button
+button = tk.Button(root, text="Submit", command=on_button_click)
+button.pack(pady=20)
 
-    # Draw windows
-    draw_rectangle("black", -90, 55, 80, 30)  # Front window
-    draw_rectangle("black", 20, 55, 80, 30)   # Rear window
-
-    # Draw wheels
-    draw_circle("black", -100, -20, 30)  # Front wheel
-    draw_circle("black", 100, -20, 30)   # Rear wheel
-    draw_circle("gray", -100, -20, 15)   # Front hubcap
-    draw_circle("gray", 100, -20, 15)    # Rear hubcap
-
-    # Draw details
-    turtle.penup()
-    turtle.goto(-150, -10)
-    turtle.pendown()
-    turtle.pensize(3)
-    turtle.pencolor("black")
-    turtle.forward(300)  # Bottom edge of the car
-
-# Set up screen
-screen = turtle.Screen()
-screen.title("Ferrari Side View")
-screen.bgcolor("lightblue")
-
-# Draw the Ferrari
-draw_ferrari()
-
-# Example: Draw a trapezoid
-# Parameters: color, x, y, top_width, bottom_width, height
-draw_trapezoid("blue", -50, 100, 100, 150, 50)
-
-# Finish
-turtle.hideturtle()
-screen.mainloop()
+# Run the main event loop
+root.mainloop()

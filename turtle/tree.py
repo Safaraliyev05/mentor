@@ -1,6 +1,5 @@
 import turtle
 
-# Setup screen and turtle
 screen = turtle.Screen()
 screen.title("Turtle House")
 screen.bgcolor("skyblue")
