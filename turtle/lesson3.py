@@ -174,5 +174,4 @@ t = turtle.Turtle()
 # t.circle(50)
 
 
-
 windows.mainloop()
