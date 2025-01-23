@@ -1,9 +1,24 @@
 from aiogram import Dispatcher, Bot
+from aiogram import types
 from aiogram.filters import Command
 from aiogram.types import Message
 
 TOKEN = '8145770694:AAGbXWfsLTgvk3l51n7yvMibn-xdjDUGeyE'
 dp = Dispatcher()
+
+buttons = [
+    [types.KeyboardButton(text='1'),
+     types.KeyboardButton(text='2')],
+
+    [types.KeyboardButton(text='3'),
+     types.KeyboardButton(text='4')],
+]
+reply_contact = types.ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
+
+
+@dp.message(Command('button'))
+async def button_start(message: Message):
+    await message.answer('Ikki qator tugmalar', reply_markup=reply_contact)
 
 
 @dp.message(Command('start'))
